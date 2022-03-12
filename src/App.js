@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import logo from './logo.svg';
 import './App.css';
+import { Title, SubTitle, Input } from './styles/AppStyle';
 
 function App() {
 
@@ -8,14 +8,17 @@ function App() {
 
   return (
     <div className="App">
-      <p style={{ fontSize: 30, color: 'lightgrey', fontWeight: 500 }} >Welcome {firstName}</p>
-      <p>
+      <Title>
+        Welcome {firstName}
+      </Title>
+      <SubTitle>
         to React JS class
-        <img src={logo} className='App-logo' alt='React JS Logo'/>  
-      </p>
-      <p className='Skola-code-text'>By SkolaCode</p>
+      </SubTitle>
+      <SubTitle >By SkolaCode</SubTitle>
 
-      <input type="text" onChange={(evt) => setFirstName(evt.target.value) }
+      <Input 
+        type="text" 
+        onChange={(evt) => setFirstName(evt.target.value) }
       />
     </div>
   );
