@@ -1,23 +1,22 @@
+import React, { useState } from 'react'
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [firstName, setFirstName] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p style={{ fontSize: 30, color: 'lightgrey', fontWeight: 500 }} >Welcome {firstName}</p>
+      <p>
+        to React JS class
+        <img src={logo} className='App-logo' alt='React JS Logo'/>  
+      </p>
+      <p className='Skola-code-text'>By SkolaCode</p>
+
+      <input type="text" onChange={(evt) => setFirstName(evt.target.value) }
+      />
     </div>
   );
 }

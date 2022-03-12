@@ -1,10 +1,15 @@
 .App {
-  text-align: center;
+  padding: 10px 10px 10px 10px;
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 10vmin;
   pointer-events: none;
+}
+
+.Skola-code-text {
+  font-size: 25px;
+  color: #747474;
 }
 
 @media (prefers-reduced-motion: no-preference) {
