@@ -9,8 +9,18 @@ export const Title = styled.h1`
 export const SubTitle = styled(Title)`
   color: blue;
 `
+export const InputBody = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 export const Input = styled.input`
   height: 20px;
   padding: 10px;
 `
+export const Description = styled.p`
+  font-size: 1.2em;
+  text-align: center;
+  color: palevioletred;
+`;

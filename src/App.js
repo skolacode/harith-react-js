@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './App.css';
-import { Title, SubTitle, Input } from './styles/AppStyle';
+import { Title, SubTitle, Input, InputBody, Description } from './styles/AppStyle';
 
 function App() {
 
@@ -15,11 +15,13 @@ function App() {
         to React JS class
       </SubTitle>
       <SubTitle >By SkolaCode</SubTitle>
-
-      <Input 
-        type="text" 
-        onChange={(evt) => setFirstName(evt.target.value) }
-      />
+      <InputBody>
+        <Input 
+          type="text" 
+          onChange={(evt) => setFirstName(evt.target.value) }
+        />
+      </InputBody>
+      <Description >I learn something new today</Description>
     </div>
   );
 }
