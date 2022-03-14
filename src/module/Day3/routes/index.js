@@ -3,7 +3,7 @@ import {
   Routes, Route,
 } from "react-router-dom";
 
-import { AboutPage, HomePage, ContactPage } from '../pages'
+import { AboutPage, HomePage, ContactPage, MyLife  } from '../pages'
 
 export const InitRoutes = () => {
   return (
@@ -12,10 +12,7 @@ export const InitRoutes = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
-
-        {/* Another route 
-          1. /about/my-life
-        */}
+        <Route path="/about/my-life" element={<MyLife />} />
       </Routes>
     </div>
   )
