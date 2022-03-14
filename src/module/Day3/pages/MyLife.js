@@ -1,11 +1,11 @@
 import React from 'react'
 import { Description, Heading, SubText  } from './HomeStyle';
 
-export const AboutPage = () => {
+export const MyLife = () => {
 
   return (
     <Description>
-      <Heading>Im Harith</Heading>
+      <Heading>I love My life</Heading>
       <SubText>
         and I am a Software Engineer
       </SubText>

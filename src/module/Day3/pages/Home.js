@@ -1,20 +1,23 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
+import { Center } from './HomeStyle';
 import { routeNames } from '../routes/routesName'
 
 
 export const HomePage = () => {
 
+  const navigate = useNavigate();
+
   return (
-    <div>
+    <Center>
       {/* TODO
         1. Have an a tag with a link to About and Contact page
       */}
       <h1>Welcome Home!!!</h1>
-      
-      <Link to={routeNames.ABOUT}>About</Link>
       <br />
-      <a href={routeNames.CONTACT}>Contact</a>
-    </div>
+      <button>About</button>
+      <br />
+      <button onClick={() => navigate(routeNames.CONTACT)}>Contact</button>
+    </Center>
   )
 }

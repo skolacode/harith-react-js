@@ -1,10 +1,15 @@
 import React from 'react'
+import { Center, Input } from './HomeStyle';
 
 export const ContactPage = () => {
 
   return (
-    <div>
-      <h1>Contact Me :-)</h1>
-    </div>
+    <Center>
+      <Input type="text" placeholder='Your Email'></Input>
+      <br />
+      <Input type="text" placeholder='Please comment'></Input>
+      <br />
+      <button>Submit</button>
+    </Center>
   )
 }
