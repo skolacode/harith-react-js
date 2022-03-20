@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Center } from './HomeStyle';
 import { routeNames } from '../routes/routesName'
 import { Button } from '@mui/material';
-import { MenuAppBar } from '../../../components'
+import { MenuAppBar, Header } from '../../../components'
 
 export const HomePage = () => {
 
@@ -13,10 +13,7 @@ export const HomePage = () => {
     <>
     <MenuAppBar />
     <Center>
-      {/* TODO
-        1. Have an a tag with a link to About and Contact page
-      */}
-      <h1>Welcome Home!!!</h1>
+      <Header title="Welcome Home" />
       <br />
       <Button size="large" variant="outlined">About</Button>
       <br />

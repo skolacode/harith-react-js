@@ -1,6 +1,7 @@
 import React from 'react'
-import { MenuAppBar } from '../../../components';
-import { Center, Input } from './HomeStyle';
+import { MenuAppBar, Header } from '../../../components';
+import { Center } from './HomeStyle';
+import { Button, TextField } from '@mui/material';
 
 export const ContactPage = () => {
 
@@ -8,11 +9,12 @@ export const ContactPage = () => {
     <>
     <MenuAppBar showRightMenu={false} />
     <Center>
-      <Input type="text" placeholder='Your Email'></Input>
+      <Header title="Let's have a coffee" />
+      <TextField id="outlined-basic" label="Your Email" variant="outlined" />
       <br />
-      <Input type="text" placeholder='Please comment'></Input>
+      <TextField id="outlined-basic" label="Please Comment" variant="outlined" />
       <br />
-      <button>Submit</button>
+      <Button size="medium" variant="contained">Submit</Button>
     </Center>
     </>
   )
