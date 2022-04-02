@@ -2,8 +2,8 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 import { Center } from './HomeStyle';
 import { routeNames } from '../routes/routesName'
-import { Button } from '@mui/material';
-import { MenuAppBar, Header } from '../../../components'
+import { MenuAppBar, Header, MyButton } from '../../../components'
+
 
 export const HomePage = () => {
 
@@ -15,9 +15,19 @@ export const HomePage = () => {
     <Center>
       <Header title="Welcome Home" />
       <br />
-      <Button size="large" variant="outlined">About</Button>
+      
+      <MyButton variant="outlined">About</MyButton>
+
+      <MyButton>
+        About
+      </MyButton>
+
       <br />
-      <Button size="medium" variant="contained" onClick={() => navigate(routeNames.CONTACT)}>Contact US</Button>
+      <MyButton 
+        onClick={() => navigate(routeNames.CONTACT)}
+      >
+        Contact USs
+      </MyButton>
     </Center>
     </>
   )
