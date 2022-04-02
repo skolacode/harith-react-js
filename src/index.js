@@ -4,11 +4,15 @@ import './index.css';
 import { InitRoutes } from './module/Day3/routes'
 import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from '@mui/material'
+import { theme } from './styles/theme';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <InitRoutes />
+      <ThemeProvider theme={theme}>
+        <InitRoutes />
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
