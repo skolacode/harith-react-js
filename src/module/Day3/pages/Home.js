@@ -12,7 +12,9 @@ export const HomePage = () => {
   const navigate = useNavigate();
 
   const [name, setName] = useState('')
+  const [country, setCountry] = useState('')
   const [countryList, setCountryList] = useState([])
+  const [countryDetails, setCountryDetails] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
   const callApi = () => {
@@ -29,6 +31,30 @@ export const HomePage = () => {
       console.log('res success: ', res)
 
       setCountryList(res.country)
+
+      setIsLoading(false)
+    })
+    .catch(err => {
+      console.log('err: ', err)
+      setCountryList([])
+      setIsLoading(false)
+    })
+  }
+
+  const getCountry = () => {
+    setIsLoading(true)
+    fetch(`https://restcountries.com/v3.1/alpha/${country}`, {
+      method: 'GET'
+    })
+    .then(resp => resp.json())
+    .then(res => {
+      if(res.error) {
+        throw res
+      }
+
+      console.log('res success: ', res)
+
+      setCountryDetails(res)
 
       setIsLoading(false)
     })
@@ -86,12 +112,34 @@ export const HomePage = () => {
         }
       </Box>
 
+      <TextField sx={{ mt: 2 }}
+        required
+        id="outlined-required"
+        label="Required"
+        defaultValue={country}
+        onChange={(evt) => setCountry(evt.target.value)}
+      />
+
+      <MyButton variant="outlined" onClick={getCountry} sx={{ mt: 1 }}>Get Country</MyButton>
+
+      {countryDetails.length > 0 &&
+          <Box>
+            {
+              countryDetails.map((each, key) => (
+                <Box key={key}>
+                  <p>{each.name.official}</p>
+                  <img src={each.flags.png} width="350" height="200" alt="Country's Flag"/>
+                </Box>
+              ))
+            }
+      </Box>}
+
       <br />
       <MyButton 
         onClick={() => navigate(routeNames.CONTACT)}
         sx={{ mt: 5 }}
       >
-        Contact USs
+        Contact US
       </MyButton>
     </Center>
     </>
